@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pagina Oficila de OnlyHub.">
+  <!-- Logo -->
+  <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+  <title>Login | OnlyHub </title>
+
+  <!-- Links css -->
+
+  <link rel="stylesheet" href="css/tipografia.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+  <!-- Nav + img + menu movil -->
+  <nav class="flex lg:justify-between items-center bg-white shadow w-auto">
+    <!-- Botón de menú que se muestra solo en pantallas pequeñas -->
+    <button class="block lg:hidden xs:block xs:mt-3 pl-7" onclick="openMenuDesplegable()" id="openMenu"
+      aria-label="Menu">
+      <svg data-testid="geist-icon" height="16" stroke-linejoin="round" viewBox="0 0 16 16" width="16"
+        style="color: currentcolor;">
+        <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M1 2H1.75H14.25H15V3.5H14.25H1.75H1V2ZM1 12.5H1.75H14.25H15V14H14.25H1.75H1V12.5ZM1.75 7.25H1V8.75H1.75H14.25H15V7.25H14.25H1.75Z"
+          fill="currentColor"></path>
+      </svg>
+    </button>
+
+    <!-- Imagen del logo -->
+    <div class="p-4 flex lg:self-end xs:self-center w-full justify-center lg:justify-start lg:ml-72 xs:ml-0">
+      <img class="img-fluid" src="img/logo.png" width="48px" height="48px" alt="Logo">
+    </div>
+    <h4 class="w-24 h-1 block lg:hidden"></h4>
+    <h4 class="w-2 h-1 block lg:hidden"></h4>
+    <!-- Botones que se muestran solo en pantallas grandes -->
+    <div class="hidden lg:flex space-x-0 p-4 lg:mr-32">
+      <button class="color2 w-20 h-10 rounded-md text-sm font-medium hover:text-black" aria-label="Log in">
+        <p> Log in</p>
+      </button>
+      <button
+        class="color1 w-20 h-10 rounded-md text-sm font-medium border border-gray-200 rounded-lg hover:bg-gray-100"
+        aria-label="Sing Up">
+        <p> Sing Up</p>
+      </button>
+    </div>
+  </nav>
+
+
+  <!-- Añadir aqui los menus -->
+  <div id="menu" class="w-full h-screen bg-white flex flex-col items-center" style="display: none;">
+    <!-- Log In -->
+    <button
+      class="color1 w-11/12 h-11 rounded-lg border border-gray-200 hover:bg-gray-100 mb-4 mt-10 bg-white flex-grow ml-3"
+      aria-label="Sing Up">
+      <p> Sing Up</p>
+    </button>
+
+    <!-- Sign Up -->
+    <button
+      class="color1 w-11/12 h-11 rounded-lg border border-gray-200 hover:bg-gray-100 mb-4 bg-gray-200 flex-grow ml-3"
+      aria-label="Log in">
+      <p> Log In</p>
+    </button>
+  </div>
+
+  <!-- LOGIN -->
+  <section id="contenido" class="flex justify-center lg:mt-24 xs:mt-16">
+   
+
+    <form action="" method="POST" id="login-form">
+      <!-- Fixeo al MT no quitar -->
+      <div class="w-1 h-32"></div>
+      <div class="mx-auto max-w-md space-y-6 mr-4 ml-4">
+        <div class="space-y-2 text-center">
+          <h1 class="text-3xl font-bold">Log In To BataLink</h1>
+          <p class="text-gray-500 dark:text-gray-400">Enter your information to login in your account</p>
+        </div>
+        <div class="space-y-4">
+          
+          <div class="space-y-2">
+            <label
+              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              for="email"
+            >
+              Email
+            </label>
+            <input
+              class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+              id="email"
+              placeholder="deivid@example.com"
+              required=""
+              type="email"
+            />
+          </div>
+          <div class="space-y-2">
+            <label
+              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              for="password"
+            >
+              Password
+            </label>
+            <input
+              class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+              id="password"
+              required=""
+              type="password"
+              placeholder="********"
+            />
+          </div>
+          
+          <button
+            class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-white hover:bg-primary/90 h-10 px-4 py-2 w-full"
+            type="submit"
+         style="background-color: #171717;" >
+            Log In
+          </button>
+        </div>
+        <div class="mt-4 text-center text-sm">
+          <p></p>You do not have an account?
+          <a class="underline" href="singUp.html">
+            Sing Up
+          </a>
+        </div>
+      </div>
+
+    </form>
+  </section>
+  <!-- Scrips JS -->
+  <script src="js/menu.js"></script>
+  <script src="js/validacionesJS.js"></script>
+  <!-- Analiticas -->
+</body>
+
+</html>
