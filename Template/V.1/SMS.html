@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pagina Oficila de OnlyHub.">
+  <!-- Logo -->
+  <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+  <title>Login | OnlyHub </title>
+
+  <!-- Links css -->
+
+  <link rel="stylesheet" href="css/tipografia.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+  <!-- Nav + img + menu movil -->
+  <nav class="flex lg:justify-between items-center bg-white shadow w-auto">
+    <!-- Botón de menú que se muestra solo en pantallas pequeñas -->
+    <button class="block lg:hidden xs:block xs:mt-3 pl-7" onclick="openMenuDesplegable()" id="openMenu"
+      aria-label="Menu">
+      <svg data-testid="geist-icon" height="16" stroke-linejoin="round" viewBox="0 0 16 16" width="16"
+        style="color: currentcolor;">
+        <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M1 2H1.75H14.25H15V3.5H14.25H1.75H1V2ZM1 12.5H1.75H14.25H15V14H14.25H1.75H1V12.5ZM1.75 7.25H1V8.75H1.75H14.25H15V7.25H14.25H1.75Z"
+          fill="currentColor"></path>
+      </svg>
+    </button>
+
+    <!-- Imagen del logo -->
+    <div class="p-4 flex lg:self-end xs:self-center w-full justify-center lg:justify-start lg:ml-72 xs:ml-0">
+      <img class="img-fluid" src="img/logo.png" width="48px" height="48px" alt="Logo">
+    </div>
+    <h4 class="w-24 h-1 block lg:hidden"></h4>
+    <h4 class="w-2 h-1 block lg:hidden"></h4>
+    <!-- Botones que se muestran solo en pantallas grandes -->
+    <div class="hidden lg:flex space-x-0 p-4 lg:mr-32">
+
+      <button class="color2 w-20 h-10 rounded-md text-sm font-medium hover:text-black" aria-label="Log in">
+        <p> Profile</p>
+      </button>
+      <button
+        class="color1 w-20 h-10 rounded-md text-sm font-medium border border-gray-200 rounded-lg hover:bg-gray-100"
+        aria-label="Sing Up">
+        <p> Log Out</p>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Añadir aqui los menus -->
+  <div id="menu" class="w-full h-screen bg-white flex flex-col items-center" style="display: none;">
+    <!-- Log In -->
+    <button
+      class="color1 w-11/12 h-11 rounded-lg border border-gray-200 hover:bg-gray-100 mb-4 mt-10 bg-white flex-grow ml-3"
+      aria-label="Sing Up">
+      <p> Log Out</p>
+    </button>
+
+  </div>
+
+  <!-- SMS Sender -->
+  <section id="contenido" class="">
+    <div class="flex justify-center">
+      <div class="mx-auto max-w-md space-y-6 mr-4 ml-4 mt-44">
+        <div class="space-y-2 text-center">
+          <h1 class="text-4xl font-bold">Teléfono virtual gratuito</h1>
+          <p class="text-gray-500 dark:text-gray-400">Recepción de mensajes de texto al número de teléfono virtual
+            gratuito</p>
+        </div>
+      </div>
+    </div>
+    <!-- Contenido numeros de telefono -->
+    <div class="flex justify-center mt-12">
+      <div class="flex flex-col sm:flex-row gap-0 w-3/5 border-2 border-gray-200 rounded rounded-xl">
+        <div class="bg-white sm:w-4/5 lg:w-1/5 h-44 xs:h-96">
+          <div class="flex justify-center">
+            <div class="bg-white p-4 rounded-lg max-w-[350px]">
+              <div class="relative mt-2 max-w-xs text-gray-500">
+                <div class="absolute inset-y-0 left-3 my-auto h-6 flex items-center border-r pr-2">
+                  <svg data-testid="geist-icon" height="16" stroke-linejoin="round" viewBox="0 0 16 16" width="16"
+                    style="color: currentcolor;">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M3.5 7C3.5 5.067 5.067 3.5 7 3.5C8.933 3.5 10.5 5.067 10.5 7C10.5 7.88461 10.1718 8.69256 9.63058 9.30876L9.30876 9.63058C8.69256 10.1718 7.88461 10.5 7 10.5C5.067 10.5 3.5 8.933 3.5 7ZM9.96544 11.0261C9.13578 11.6382 8.11014 12 7 12C4.23858 12 2 9.76142 2 7C2 4.23858 4.23858 2 7 2C9.76142 2 12 4.23858 12 7C12 8.11014 11.6382 9.13578 11.0261 9.96544L14.0303 12.9697L14.5607 13.5L13.5 14.5607L12.9697 14.0303L9.96544 11.0261Z"
+                      fill="currentColor"></path>
+                  </svg>
+                </div>
+                <input type="text" placeholder="Select Country"
+                  class="w-full pl-[3rem] pr-3 py-2 appearance-none bg-transparent outline-none border focus:border-slate-600 shadow-sm rounded-lg">
+              </div>
+            </div>
+
+          </div>
+          <!-- Paises -->
+          <div id="botones-container"></div>
+          
+        </div>
+        <div class="border-t border-gray-200 w-full h-1 xs:block lg:hidden"></div>
+        <div class="hidden lg:block border-l border-gray-200 h-44 lg:h-96"></div>
+        <div class="bg-white sm:w-4/5 lg:w-1/5 h-44 sm:h-96">
+          <div class="flex justify-center mt-9">
+          <h2 class="color2 mb-6">Free numbers</h2>
+        </div>
+       
+          <button class="flex items-center mb-1.5 ml-4 ml-6 w-4/5 bg-gray-100 hover:bg-gray-50 hover:bg-opacity-90 rounded-lg w-48 h-10"></button>
+
+
+        </div>
+        <div class="border-t border-gray-200 w-full h-1 xs:block lg:hidden"></div>
+        <div class="hidden lg:block border-l border-gray-200 h-44 lg:h-96"></div>
+        <div class="bg-white sm:w-4/5 lg:w-3/5 h-44 sm:h-96">
+
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="w-1 h-1 mt-10"></div>
+
+
+
+
+  </section>
+  <!-- Scrips JS -->
+  <script src="js/menu.js"></script>
+  <script src="js/SMS.js"></script>
+
+  <!-- Analiticas -->
+</body>
+
+</html>
