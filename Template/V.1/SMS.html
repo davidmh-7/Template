@@ -4,9 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Pagina Oficila de OnlyHub.">
+  <meta name="description" content="Teléfono virtual gratuito. Recepción de mensajes de texto al número de teléfono virtual
+  gratuito">
   <!-- Logo -->
   <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+  
   <title>Login | OnlyHub </title>
 
   <!-- Links css -->
@@ -77,8 +79,12 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-7 ml-4 mb-7">
           <div>
             <input
-              class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 mb-2"
-              placeholder="Enter country" type="search" />
+            id="countryInput"
+            class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 mb-2"
+            placeholder="Enter country"
+            type="search"
+        />
+        
             <div dir="ltr" class="relative overflow-hidden border rounded-md h-[300px] barra"
               style="position: relative; --radix-scroll-area-corner-width: 0px; --radix-scroll-area-corner-height: 0px;">
               <div data-radix-scroll-area-viewport="" class=" h-full w-full rounded-[inherit]"
@@ -105,8 +111,6 @@
                     <div id="numeroTelefono"></div>
                   </div>
 
-
-
                 </div>
               </div>
             </div>
@@ -117,10 +121,10 @@
               <div class="flex items-center space-x-2">
                 <div
                   class="inline-flex w-fit items-center whitespace-nowrap rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80">
-                  +<span id="CopiarTelefono"></span>
+                  <span id="plusOcultar" style="visibility: hidden;">+</span><span id="CopiarTelefono"></span>
                 </div>
                 <button
-                  class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3" aria-label="CopiarTelefono" id="CopiarTelefonoBoton" style="display: none;">
+                  class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3" aria-label="CopiarTelefono" id="CopiarTelefonoBoton" style="visibility: hidden;"data-tippy-content="Descargar">
                   <svg data-testid="geist-icon" height="16" stroke-linejoin="round" viewBox="0 0 16 16" width="16"
                     style="color: currentcolor;">
                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -147,8 +151,6 @@
         </div>
       </div>
     </div>
-
-
     <div class="w-1 h-1 mt-10"></div>
 
 
