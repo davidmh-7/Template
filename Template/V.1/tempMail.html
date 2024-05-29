@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Teléfono virtual gratuito. Recepción de mensajes de texto al número de teléfono virtual
+  gratuito">
+  <!-- Logo -->
+  <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+
+  <title>Login | OnlyHub </title>
+
+  <!-- Links css -->
+
+  <link rel="stylesheet" href="css/tipografia.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+  <!-- Nav + img + menu movil -->
+  <nav class="flex lg:justify-between items-center bg-white shadow w-auto">
+    <!-- Botón de menú que se muestra solo en pantallas pequeñas -->
+    <button class="block lg:hidden xs:block xs:mt-3 pl-7" onclick="openMenuDesplegable()" id="openMenu"
+      aria-label="Menu">
+      <svg data-testid="geist-icon" height="16" stroke-linejoin="round" viewBox="0 0 16 16" width="16"
+        style="color: currentcolor;">
+        <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M1 2H1.75H14.25H15V3.5H14.25H1.75H1V2ZM1 12.5H1.75H14.25H15V14H14.25H1.75H1V12.5ZM1.75 7.25H1V8.75H1.75H14.25H15V7.25H14.25H1.75Z"
+          fill="currentColor"></path>
+      </svg>
+    </button>
+
+    <!-- Imagen del logo -->
+    <div class="p-4 flex lg:self-end xs:self-center w-full justify-center lg:justify-start lg:ml-72 xs:ml-0">
+      <img class="img-fluid" src="img/logo.png" width="48px" height="48px" alt="Logo">
+    </div>
+    <h4 class="w-24 h-1 block lg:hidden"></h4>
+    <h4 class="w-2 h-1 block lg:hidden"></h4>
+    <!-- Botones que se muestran solo en pantallas grandes -->
+    <div class="hidden lg:flex space-x-0 p-4 lg:mr-32">
+
+      <button class="color2 w-20 h-10 rounded-md text-sm font-medium hover:text-black" aria-label="Log in">
+        <p> Profile</p>
+      </button>
+      <button
+        class="color1 w-20 h-10 rounded-md text-sm font-medium border border-gray-200 rounded-lg hover:bg-gray-100"
+        aria-label="Sing Up">
+        <p> Log Out</p>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Añadir aqui los menus -->
+  <div id="menu" class="w-full h-screen bg-white flex flex-col items-center" style="display: none;">
+    <!-- Log In -->
+    <button
+      class="color1 w-11/12 h-11 rounded-lg border border-gray-200 hover:bg-gray-100 mb-4 mt-10 bg-white flex-grow ml-3"
+      aria-label="Sing Up">
+      <p> Log Out</p>
+    </button>
+
+  </div>
+
+  <!-- SMS Sender -->
+  <section id="contenido">
+    <div class="flex justify-center">
+      <div class="mx-auto max-w-md space-y-6 mr-4 ml-4 mt-20 lg:mt-44">
+        <div class="space-y-2 text-center">
+          <h1 class="text-4xl font-bold">Correo Temporal FakeDigits</h1>
+        </div>
+      </div>
+    </div>
+
+
+    <!--Imput mensajes -->
+    <div class="flex justify-center">
+      <div class="w-2/3 mt-2">
+
+        <div class="p-6">
+          <div class="grid gap-4">
+            <div class="flex justify-center mt-5 lg:mt-4">
+              <input
+                class="flex h-10 w-2/4 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                id="emailTemporal" name="emailTemporal" type="text" placeholder="Cargando ..."
+                aria-label="emailTemporal" />
+            </div>
+
+          </div>
+        </div>
+        <div class="mt-1 flex flex-wrap justify-center gap-6 mb-7 xs:flex-col">
+          <button
+            class="inline-flex items-center w-32 h-24 justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
+            aria-label="CopiarTelefono" id="CopiarTelefonoBoton" data-tippy-content="Descargar">
+
+            <h3 class="flex text-lg">Copiar
+              <svg data-testid="geist-icon" height="19" stroke-linejoin="round" viewBox="0 0 16 16" width="19"
+                style="color: currentcolor; margin-top: 5px;" class="ml-2">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z"
+                  fill="currentColor"></path>
+              </svg>
+            </h3>
+          </button>
+
+          <button
+            class="inline-flex items-center w-32 h-24 justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
+            aria-label="CopiarTelefono" id="CopiarTelefonoBoton" data-tippy-content="Descargar" onclick="actualizarPagina()">
+
+            <h3 class="flex text-lg">Actualizar
+              <svg data-testid="geist-icon" height="19" stroke-linejoin="round" viewBox="0 0 16 16" width="19"
+                style="color: currentcolor; margin-top: 5px;" class="ml-2">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z"
+                  fill="currentColor"></path>
+              </svg>
+            </h3>
+          </button>
+
+          <button
+            class="inline-flex items-center w-32 h-24 justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
+            aria-label="CopiarTelefono" id="CopiarTelefonoBoton" data-tippy-content="Descargar">
+
+            <h3 class="flex text-lg">Cambiar
+              <svg data-testid="geist-icon" height="19" stroke-linejoin="round" viewBox="0 0 16 16" width="19"
+                style="color: currentcolor; margin-top: 5px;" class="ml-2">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z"
+                  fill="currentColor"></path>
+              </svg>
+            </h3>
+          </button>
+
+
+          <button
+            class="inline-flex items-center w-32 h-24 justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
+            aria-label="CopiarTelefono" id="CopiarTelefonoBoton" data-tippy-content="Descargar" onclick="borrarCorreo()">
+
+            <h3 class="flex text-lg">Borrar
+              <svg data-testid="geist-icon" height="19" stroke-linejoin="round" viewBox="0 0 16 16" width="19"
+                style="color: currentcolor; margin-top: 5px;" class="ml-2">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M2.75 0.5C1.7835 0.5 1 1.2835 1 2.25V9.75C1 10.7165 1.7835 11.5 2.75 11.5H3.75H4.5V10H3.75H2.75C2.61193 10 2.5 9.88807 2.5 9.75V2.25C2.5 2.11193 2.61193 2 2.75 2H8.25C8.38807 2 8.5 2.11193 8.5 2.25V3H10V2.25C10 1.2835 9.2165 0.5 8.25 0.5H2.75ZM7.75 4.5C6.7835 4.5 6 5.2835 6 6.25V13.75C6 14.7165 6.7835 15.5 7.75 15.5H13.25C14.2165 15.5 15 14.7165 15 13.75V6.25C15 5.2835 14.2165 4.5 13.25 4.5H7.75ZM7.5 6.25C7.5 6.11193 7.61193 6 7.75 6H13.25C13.3881 6 13.5 6.11193 13.5 6.25V13.75C13.5 13.8881 13.3881 14 13.25 14H7.75C7.61193 14 7.5 13.8881 7.5 13.75V6.25Z"
+                  fill="currentColor"></path>
+              </svg>
+            </h3>
+          </button>
+
+
+
+        </div>
+
+      </div>
+    </div>
+    </div>
+
+    <!-- Cuadrado de abajo -->
+
+    <div class="flex justify-center">
+      <div class="w-2/4  border-2 border-gray-200  h-96" id="filtrarMenu">
+
+      </div>
+    </div>
+
+
+    <!-- Ampliacion de pagina -->
+<!-- 
+    <div>
+      <div class="flex justify-center mt-20">
+        <h1 class="text-4xl font-bold">Qué es el E-mail temporal desechable?</h1>
+      </div>
+      <div class="flex justify-center mb-20">
+      <div class=" mt-7" style="max-width: 600px; padding: 20px;">
+        <p style="color: #666666; font-size: 14px; line-height: 1.5; text-align: justify;">
+          Correo electrónico desechable - es un servicio que permite recibir correos electrónicos en una dirección temporal que se autodestruyó luego de que transcurra cierto tiempo. También es conocido por nombres como: FakeDigits, 10minutemail, correo electrónico desechable, correo falso o correo basura. Muchos foros, propietarios de Wi-Fi, sitios web y blogs solicitan a los visitantes que se registren antes de que puedan ver el contenido, publicar comentarios o descargar algo. FakeDigits - es el servicio de correo electrónico desechable más avanzado que le ayuda a evitar el correo no deseado y a mantenerse a salvo.
+        </p>
+      </div>
+    </div>
+    </div>
+ <div class="w-1 h-1"></div> -->
+  </section>
+  <!-- Scrips JS -->
+  <script src="js/menu.js"></script>
+  <script src="js/mail.js"></script>
+
+
+  <!-- Analiticas -->
+
+
+
+  
+</body>
+
+</html>
+
+<!-- const url = 'https://tempmail83.p.rapidapi.com/api/getDetails.php?email=%3CREQUIRED%3E&id=%3CREQUIRED%3E';
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '31e014dbf2msh7dfbd3e9312cda5p158aadjsn49c0d74aef02',
+		'X-RapidAPI-Host': 'tempmail83.p.rapidapi.com' -->
