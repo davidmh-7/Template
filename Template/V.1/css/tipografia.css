@@ -43,3 +43,17 @@
   ::-webkit-scrollbar-thumb:hover {
     background: #555; 
   }
+
+  @keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.emptyInboxRotation {
+    animation: rotation 2s infinite linear;
+    transform-origin: center;
+}
